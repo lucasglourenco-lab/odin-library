@@ -1,147 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Uma biblioteca pessoal para organizar seus livros e acompanhar suas leituras.">
-    <meta name="theme-color" content="#244b45">
-    <title>BookBase — Minha biblioteca</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <a class="skip-link" href="#library">Ir para minha biblioteca</a>
 
-    <header class="site-header">
-      <div class="page-width header-content">
-        <a class="brand" href="#library" aria-label="BookBase, minha biblioteca">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 6.5C8.8 4.7 5.5 4.7 2.5 5.5v14c3-.8 6.3-.8 9.5 1 3.2-1.8 6.5-1.8 9.5-1v-14c-3-.8-6.3-.8-9.5 1Z"/>
-              <path d="M12 6.5v14M6 9l2.5.5M6 12.5l2.5.5M15.5 9.5 18 9M15.5 13l2.5-.5"/>
-            </svg>
-          </span>
-          <span>Book<span class="brand-accent">Base</span><small>SUA BIBLIOTECA PESSOAL</small></span>
-        </a>
-        <p class="header-note"><span aria-hidden="true"></span> Um livro. Novas possibilidades.</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Uma biblioteca pessoal para organizar seus livros e acompanhar suas leituras.">
+  <meta name="theme-color" content="#244b45">
+  <title>BookBase — Minha biblioteca</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#library">Ir para minha biblioteca</a>
+
+  <header class="site-header">
+    <div class="page-width header-content">
+      <a class="brand" href="#library" aria-label="BookBase, minha biblioteca">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 6.5C8.8 4.7 5.5 4.7 2.5 5.5v14c3-.8 6.3-.8 9.5 1 3.2-1.8 6.5-1.8 9.5-1v-14c-3-.8-6.3-.8-9.5 1Z" />
+            <path d="M12 6.5v14M6 9l2.5.5M6 12.5l2.5.5M15.5 9.5 18 9M15.5 13l2.5-.5" />
+          </svg>
+        </span>
+        <span>Book<span class="brand-accent">Base</span><small>SUA BIBLIOTECA PESSOAL</small></span>
+      </a>
+      <p class="header-note"><span aria-hidden="true"></span> Um livro. Novas possibilidades.</p>
+    </div>
+  </header>
+
+  <main id="library" class="page-width" tabindex="-1">
+    <section class="intro" aria-labelledby="pageTitle">
+      <div class="intro-copy">
+        <p class="eyebrow">ENTRE UMA PÁGINA E OUTRA</p>
+        <h1 id="pageTitle">Um lugar para suas<br><em>próximas histórias.</em></h1>
+        <p class="intro-description">Organize sua estante, acompanhe suas leituras<br class="desktop-break"> e deixe espaço para descobrir novos mundos.</p>
       </div>
-    </header>
+      <div class="book-illustration" aria-hidden="true">
+        <span class="illustration-circle"></span>
+        <span class="decorative-book decorative-book--cream"><span>NOVOS MUNDOS</span><i></i></span>
+        <span class="decorative-book decorative-book--clay"><span>DESCOBERTAS</span><i></i></span>
+        <span class="decorative-book decorative-book--green"><span>HISTÓRIAS</span><i></i></span>
+        <span class="illustration-line"></span>
+        <span class="illustration-star illustration-star--one">✦</span>
+        <span class="illustration-star illustration-star--two">✧</span>
+      </div>
+    </section>
 
-    <main id="library" class="page-width" tabindex="-1">
-      <section class="intro" aria-labelledby="pageTitle">
-        <div class="intro-copy">
-          <p class="eyebrow">ENTRE UMA PÁGINA E OUTRA</p>
-          <h1 id="pageTitle">Um lugar para suas<br><em>próximas histórias.</em></h1>
-          <p class="intro-description">Organize sua estante, acompanhe suas leituras<br class="desktop-break"> e deixe espaço para descobrir novos mundos.</p>
-        </div>
-        <div class="book-illustration" aria-hidden="true">
-          <span class="illustration-circle"></span>
-          <span class="decorative-book decorative-book--cream"><span>NOVOS MUNDOS</span><i></i></span>
-          <span class="decorative-book decorative-book--clay"><span>DESCOBERTAS</span><i></i></span>
-          <span class="decorative-book decorative-book--green"><span>HISTÓRIAS</span><i></i></span>
-          <span class="illustration-line"></span>
-          <span class="illustration-star illustration-star--one">✦</span>
-          <span class="illustration-star illustration-star--two">✧</span>
-        </div>
-      </section>
-
-      <section class="collection" aria-labelledby="collectionTitle">
-        <div class="collection-heading">
-          <div>
-            <p class="eyebrow">CADA LIVRO, UMA DESCOBERTA</p>
-            <h2 id="collectionTitle">Minha estante<span aria-hidden="true">.</span></h2>
-          </div>
-          <button id="addBook" class="button button--primary" type="button" aria-haspopup="dialog" aria-controls="bookDialog">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-            Adicionar livro
-          </button>
-        </div>
-
-        <ul id="listOfBooks" class="book-grid" aria-label="Livros da minha biblioteca"></ul>
-
-        <div id="emptyState" class="empty-state">
-          <div class="empty-illustration" aria-hidden="true">
-            <span></span>
-            <svg viewBox="0 0 80 70" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M40 20C29 13 17 13 7 17v37c10-4 22-4 33 3 11-7 23-7 33-3V17c-10-4-22-4-33 3Z"/>
-              <path d="M40 20v37M17 26c5-1 10 0 15 2M17 34c5-1 10 0 15 2M17 42c5-1 10 0 15 2M48 28c5-2 10-3 15-2M48 36c5-2 10-3 15-2M48 44c5-2 10-3 15-2"/>
-              <path d="M60 6v8M56 10h8M20 4v5M17.5 6.5h5"/>
-            </svg>
-          </div>
-          <p class="empty-label">O PRIMEIRO CAPÍTULO É SEU</p>
-          <h3>Toda estante começa com um livro.</h3>
-          <p>Adicione o que você está lendo, já leu<br class="desktop-break"> ou ainda quer descobrir.</p>
-          <span class="empty-detail">Pequenas páginas. Grandes histórias.</span>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer page-width">
-      <p>BookBase <span aria-hidden="true">/</span> Uma página de cada vez.</p>
-      <span>Boas histórias merecem um lugar.</span>
-    </footer>
-
-    <dialog id="bookDialog" class="book-dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDescription">
-      <div class="dialog-heading">
+    <section class="collection" aria-labelledby="collectionTitle">
+      <div class="collection-heading">
         <div>
-          <p class="eyebrow">MAIS UMA HISTÓRIA NA ESTANTE</p>
-          <h2 id="dialogTitle">Adicionar um livro</h2>
-          <p id="dialogDescription">Conte um pouco sobre a sua próxima leitura.</p>
+          <p class="eyebrow">CADA LIVRO, UMA DESCOBERTA</p>
+          <h2 id="collectionTitle">Minha estante<span aria-hidden="true">.</span></h2>
         </div>
-        <button id="closeDialog" class="icon-button close-button" type="button" aria-label="Fechar formulário">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+        <button id="addBook" class="button button--primary" type="button" aria-haspopup="dialog" aria-controls="bookDialog">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+          Adicionar livro
         </button>
       </div>
 
-      <form id="bookForm" class="book-form">
-        <div class="form-field">
-          <label for="bookTitle">Título do livro <span aria-hidden="true">*</span></label>
-          <input id="bookTitle" name="title" type="text" placeholder="Qual história vai entrar na sua estante?" maxlength="150" required autocomplete="off" autofocus>
-        </div>
-        <div class="form-row">
-          <div class="form-field">
-            <label for="bookAuthor">Autor ou autora <span aria-hidden="true">*</span></label>
-            <input id="bookAuthor" name="author" type="text" placeholder="Quem escreveu?" maxlength="120" required autocomplete="off">
-          </div>
-          <div class="form-field pages-field">
-            <label for="bookPages">Páginas <span aria-hidden="true">*</span></label>
-            <input id="bookPages" name="pages" type="number" placeholder="Ex.: 240" min="1" step="1" required inputmode="numeric">
-          </div>
-        </div>
-        <label class="read-option" for="read">
-          <input id="read" name="read" type="checkbox">
-          <span><strong>Já li este livro</strong><small>Uma história que já faz parte da sua jornada.</small></span>
-        </label>
-        <p class="form-note">O status de leitura pode ser alterado depois.</p>
-        <div class="dialog-actions">
-          <button id="cancelBook" class="button button--secondary" type="button">Cancelar</button>
-          <button id="saveBook" class="button button--primary" type="submit">Adicionar à estante <span aria-hidden="true">↗</span></button>
-        </div>
-      </form>
-    </dialog>
+      <ul id="listOfBooks" class="book-grid" aria-label="Livros da minha biblioteca"></ul>
 
-    <!-- Modelo visual de um cartão. Os dados e os eventos serão definidos no seu JavaScript. -->
-    <template id="bookTemplate">
-      <li class="book-card" data-book-id="" data-read="false">
-        <div class="card-topline">
-          <span class="card-book-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h12a2 2 0 0 1 2 2V21H6a3 3 0 0 1-3-3V6a2.5 2.5 0 0 1 2-2.5Z"/><path d="M6 17h13M7 4v9M11 8h4M11 11h3"/></svg>
-          </span>
-          <span class="book-status">Ainda não lido</span>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-illustration" aria-hidden="true">
+          <span></span>
+          <svg viewBox="0 0 80 70" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M40 20C29 13 17 13 7 17v37c10-4 22-4 33 3 11-7 23-7 33-3V17c-10-4-22-4-33 3Z" />
+            <path d="M40 20v37M17 26c5-1 10 0 15 2M17 34c5-1 10 0 15 2M17 42c5-1 10 0 15 2M48 28c5-2 10-3 15-2M48 36c5-2 10-3 15-2M48 44c5-2 10-3 15-2" />
+            <path d="M60 6v8M56 10h8M20 4v5M17.5 6.5h5" />
+          </svg>
         </div>
-        <h3 class="book-title"></h3>
-        <p class="book-author"></p>
-        <p class="book-length"><span class="book-pages"></span> páginas</p>
-        <div class="book-actions">
-          <button class="button read-button" type="button" data-action="toggle-read" aria-pressed="false">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
-            <span class="read-button-label">Marcar como lido</span>
-          </button>
-          <button class="icon-button remove-button" type="button" data-action="remove" aria-label="Remover livro">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v5M14 11v5"/></svg>
-          </button>
+        <p class="empty-label">O PRIMEIRO CAPÍTULO É SEU</p>
+        <h3>Toda estante começa com um livro.</h3>
+        <p>Adicione o que você está lendo, já leu<br class="desktop-break"> ou ainda quer descobrir.</p>
+        <span class="empty-detail">Pequenas páginas. Grandes histórias.</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer page-width">
+    <p>BookBase <span aria-hidden="true">/</span> Uma página de cada vez.</p>
+    <span>Boas histórias merecem um lugar.</span>
+  </footer>
+
+  <dialog id="bookDialog" class="book-dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDescription">
+    <div class="dialog-heading">
+      <div>
+        <p class="eyebrow">MAIS UMA HISTÓRIA NA ESTANTE</p>
+        <h2 id="dialogTitle">Adicionar um livro</h2>
+        <p id="dialogDescription">Conte um pouco sobre a sua próxima leitura.</p>
+      </div>
+      <button id="closeDialog" class="icon-button close-button" type="button" aria-label="Fechar formulário">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <path d="m6 6 12 12M6 18 18 6" />
+        </svg>
+      </button>
+    </div>
+
+    <form id="bookForm" class="book-form">
+      <div class="form-field">
+        <label for="bookTitle">Título do livro <span aria-hidden="true">*</span></label>
+        <input id="bookTitle" name="title" type="text" placeholder="Qual história vai entrar na sua estante?" maxlength="150" required autocomplete="off">
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="bookAuthor">Autor ou autora <span aria-hidden="true">*</span></label>
+          <input id="bookAuthor" name="author" type="text" placeholder="Quem escreveu?" maxlength="120" required autocomplete="off">
         </div>
-      </li>
-    </template>
-  </body>
+        <div class="form-field pages-field">
+          <label for="bookPages">Páginas <span aria-hidden="true">*</span></label>
+          <input id="bookPages" name="pages" type="number" placeholder="Ex.: 240" min="1" step="1" required inputmode="numeric">
+        </div>
+      </div>
+      <label class="read-option" for="read">
+        <input id="read" name="read" type="checkbox">
+        <span><strong>Já li este livro</strong><small>Uma história que já faz parte da sua jornada.</small></span>
+      </label>
+      <p class="form-note">O status de leitura pode ser alterado depois.</p>
+      <div class="dialog-actions">
+        <button id="cancelBook" class="button button--secondary" type="button">Cancelar</button>
+        <button id="saveBook" class="button button--primary" type="submit">Adicionar à estante <span aria-hidden="true">↗</span></button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Modelo visual de um cartão. Os dados e os eventos serão definidos no seu JavaScript. -->
+  <template id="bookTemplate">
+    <li class="book-card" data-book-id="" data-read="false">
+      <div class="card-topline">
+        <span class="card-book-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 3.5h12a2 2 0 0 1 2 2V21H6a3 3 0 0 1-3-3V6a2.5 2.5 0 0 1 2-2.5Z" />
+            <path d="M6 17h13M7 4v9M11 8h4M11 11h3" />
+          </svg>
+        </span>
+        <span class="book-status">Ainda não lido</span>
+      </div>
+      <h3 class="book-title"></h3>
+      <p class="book-author"></p>
+      <p class="book-length"><span class="book-pages"></span> páginas</p>
+      <div class="book-actions">
+        <button class="button read-button" type="button" data-action="toggle-read" aria-pressed="false">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m5 12 4 4L19 6" />
+          </svg>
+          <span class="read-button-label">Marcar como lido</span>
+        </button>
+        <button class="icon-button remove-button" type="button" data-action="remove" aria-label="Remover livro">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v5M14 11v5" />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </template>
+</body>
+
 </html>

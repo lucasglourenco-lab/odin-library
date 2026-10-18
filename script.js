@@ -21,7 +21,6 @@ function openModal() {
 function closeModal() {
   const modal = document.querySelector("#bookDialog");
   modal.style.display = "none";
-  // modal.style.position = "absolute";
 }
 
 // Criar Lista de Livros
@@ -36,18 +35,33 @@ const Book = function (title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
+  this.id = `id-${crypto.randomUUID()}`;
 };
 
-function addBooksToList(title, author, pages, read) {
-  const title = document.querySelector("#bookTitle").value;
-  const author = document.querySelector("#bookAuthor").value;
-  const pages = document.querySelector("#bookPages").value;
-  const read = document.querySelector("#read").value;
+const bookTitle = document.querySelector("#bookTitle");
+const bookAuthor = document.querySelector("#bookAuthor");
+const bookPages = document.querySelector("#bookPages");
+const bookRead = document.querySelector("#read");
+
+function addBooksToList() {
+  title = bookTitle.value;
+  author = bookAuthor.value;
+  pages = bookPages.value;
+  read = bookRead.value;
+
   const book = new Book(title, author, pages, read);
   listOfBooks.push(book);
+  closeModal();
   console.log(listOfBooks);
 }
 
 //Botão Adicionar Livro à Estante
+//Prevent Default primeiramente
+const formulario = document.querySelector("#bookForm");
+formulario.addEventListener("submit", function (e) {
+  e.preventDefault();
+});
+
+//Botão salvar e Chamada da Função
 const btnSave = document.querySelector("#saveBook");
 btnSave.addEventListener("click", addBooksToList);
