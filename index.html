@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Library - Odin Exercise</title>
+</head>
+
+<body>
+  <nav class="sidebar">
+
+    <div class="logo">
+      <img src="./assets/logo1.png" alt="">
+      <h1><span>Book</span>Base</h1>
+    </div>
+    <p>Your free library.</p>
+
+    <ul>
+      <li><a href="">All Books</a></li>
+      <li><a href="">Fantasy</a></li>
+      <li><a href="">Sci-Fi</a></li>
+      <li><a href="">Self Help</a></li>
+      <li><a href="">Favorites</a></li>
+    </ul>
+  </nav>
+  <div class="topbar">
+    <input type="text">
+    <button class='addBook' id="addBook">Add book</button>
+  </div>
+  <div class="container">
+    <h2>All Books</h2>
+
+    <section class="main" id="listOfBooks">
+
+
+    </section>
+
+  </div>
+  <div class="ads">
+    <h1>advertisements</h1>
+  </div>
+
+  <div class="modal" id="modal" style="display: none;">
+    <h2>Add Your Book</h2>
+    <form action="">
+      <label for="title">Title</label>
+      <input type="text" id="bookTitle" required>
+      <label for="author">Author</label>
+      <input type="text" id="bookAuthor" required>
+      <label for="pages">Number of Pages</label>
+      <input type="number" id="bookPages" required>
+      <div class="read-flex"><label for="read">Readed?</label>
+        <input type="checkbox" name="" id="read">
+      </div>
+    </form>
+    <div class="buttonsModal"><button class="addBook" id="addBookModal">Add Book</button>
+      <button class="delButton" style="padding: 0.5rem 1rem;" id="cancelBtnModal">Cancel</button>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
